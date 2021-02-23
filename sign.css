@@ -1,3 +1,4 @@
+
 *{
     padding:0 auto;
     margin:0 auto;
@@ -10,14 +11,14 @@ body{
     font-family: "Century Gothic",sans-serif!important;
 }
 .logo{
-    margin: 175px auto;
-    font-size: 45px;
+    margin: 230px -80px auto;
+    font-size: 65px;
     font-style: italic;
     font-weight: bolder;
     font-family: "Ink Free",sans-serif;
 }
 .boxing{
-    background-color: #374045;
+    background-color: white;
     margin: 60px auto;
     border-radius: 45px;
     box-shadow:5px 5px 8px 3px black, -5px -5px 8px black;
@@ -35,58 +36,45 @@ body{
 }
 .linking a{
     text-decoration: none;
-    color: white;
+    color: black;
     display: block;
 }
 .linking :hover{
     color:#2ecc71;
 }
-
-
-
-
-/* Kshitij Code starts here */
-
-.box h1{
-    color: white;
-    text-transform: uppercase;
-    font-weight: 500;
-  }
-
+/* starting forms*/
 .box input[type = "text"],.box input[type = "password"],.box input[type = "email"]{
-    border:0;
     background: none;
     display: block;
     margin: 20px auto;
     text-align: center;
-    border: 2px solid #3498db;
+    border: 3px solid #3498db;
     padding: 14px 10px;
     width: 200px;
     outline: none;
-    color: white;
-    border-radius: 24px;
+    color: black;
+    border-radius: 25px;
     transition: 0.25s;
-  }
+}
 
-  .box input[type = "text"]:focus,.box input[type = "password"]:focus,.box input[type = "email"]:focus{
+.box input[type = "text"]:focus,.box input[type = "password"]:focus,.box input[type = "email"]:focus{
     width: 280px;
     border-color: #2ecc71;
-  }
+}
 
-  .box input[type = "submit"]{
-    border:0;
+.box input[type = "submit"]{
     background: none;
     display: block;
     margin: 20px auto;
     text-align: center;
-    border: 2px solid #2ecc71;
+    border: 3px solid #2ecc71;
     padding: 14px 40px;
     outline: none;
-    color: white;
+    color: black;
     border-radius: 24px;
     transition: 0.25s;
     cursor: pointer;
-  }
-  .box input[type = "submit"]:hover{
+}
+.box input[type = "submit"]:hover{
     background: #2ecc71;
-  }
+}
