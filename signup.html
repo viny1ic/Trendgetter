@@ -16,7 +16,7 @@
 
 <div class="boxing">
     <div class="form">
-        <form action="signin.html">
+        <form action="signin.html" class="box">
             <div class="form-image">
                 <img src="https://www.flaticon.com/svg/static/icons/svg/64/64572.svg" alt="user" width="100px" height="100px"><!---->
             </div>
@@ -24,34 +24,45 @@
                 <h1>REGISTER</h1>
             </div>
             <div class="name">
-                <label for="name" class="label-name">
+                <!--
+                    <label for="name" class="label-name">
                     <span class="content-name">Name</span>
                 </label>
-                <input type="text" id="name" autocomplete="off" required/>
+                -->
+                
+                <input type="text" id="name" autocomplete="off" placeholder="Name" required/>
             </div>
             <div class="email">
-                <label for="email" class="label-name">
+                <!--
+                    <label for="email" class="label-name">
                     <span class="content-name">E-Mail</span>
                 </label>
-                <input type="email" id="email" autocomplete="off" required/>
+                -->
+                <input type="email" id="email" autocomplete="off" placeholder="E-mail" required/>
             </div>
             <div class="password">
-                <label for="password" class="label-name">
+                <!--
+                    <label for="password" class="label-name">
                     <span class="content-name">Password</span>
                 </label>
-                <input type="password" id="password" autocomplete="off" required/>
+                -->
+                <input type="password" id="password" autocomplete="off" placeholder="Password" required/>
             </div>
             <div class="conpass">
-                <label for="conpass" class="label-name">
+                <!--
+                    <label for="conpass" class="label-name">
                     <span class="content-name">Confirm Password</span>
                 </label>
-                <input type="password" id="conpass" autocomplete="off" required/>
+                -->
+                <input type="password" id="conpass" autocomplete="off" placeholder="Confirm Password" required/>
             </div>
             <div class="submit">
-                <button type="submit">Sign up</button>
+                <input type="submit" name="" value="Sign up">
             </div>
         </form>
     </div>
 </div>
+
+
 </body>
 </html>
