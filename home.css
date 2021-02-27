@@ -1,9 +1,6 @@
 body{
     font-family: "Century Gothic",sans-serif!important;
 }
-#wrapper{
-
-}
 /* Sidebar */
 #sidebar-wrapper{
     z-index:1;
@@ -26,7 +23,6 @@ body{
 #menu-toggle{
     transition:all .2s;
     font-size:30px;
-    padding-left: 20px;
     position: fixed!important;
 }
 /* Change the width of the sidebar to display it*/
