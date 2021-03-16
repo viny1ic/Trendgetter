@@ -8,6 +8,7 @@ body{
     background: linear-gradient(to right, #b92b27, #1565c0);
     display: flex;
     font-family: "Century Gothic",sans-serif!important;
+    user-select: none;
 }
 .logo{
     margin: 230px -85px auto;
@@ -24,7 +25,7 @@ body{
     display: flex;
     justify-content: center;
     width: 500px;
-    height: 600px;
+    height: auto;
 }
 .form-image{
     margin: 20px auto;
@@ -33,6 +34,7 @@ body{
     text-decoration: none;
     color: white;
     display: block;
+    margin-bottom: 50px;
 }
 .linking :hover{
     color:#2ecc71;
