@@ -25,6 +25,7 @@ body{
     font-size:30px;
     margin-left: 10px;
     position: fixed!important;
+    margin-left: 10px;
 }
 /* Change the width of the sidebar to display it*/
 #wrapper.menuDisplayed #sidebar-wrapper{
