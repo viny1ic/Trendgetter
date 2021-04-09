@@ -75,4 +75,6 @@ app.post("/signin", function(req,res){
     }
   })
 })
-app.listen(80)
+app.listen(80,()=>{
+    console.log('server at http://localhost');
+});
