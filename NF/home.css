@@ -6,6 +6,13 @@
 body{
     font-family: "Century Gothic",sans-serif!important;
 }
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: lightgray;
+    border-radius: 25px;
+}
 /* Sidebar */
 #sidebar-wrapper{
     z-index:1;
