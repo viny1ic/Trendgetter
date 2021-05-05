@@ -1,13 +1,19 @@
-let modal = document.getElementById("myModal");
-let img = document.getElementById("myImg");
-let modalImg = document.getElementById("img01");
+const modal = document.querySelector(".modal");
+const previews = document.querySelectorAll(".container .myImg");
+const orignal = document.querySelector(".full-image");
 
-img.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = this.src;
-};
+previews.forEach(preview => {
+	preview.addEventListener('click',() => {
+		modal.classList.add("open");
+		orignal.classList.add("open");
+		const orignalSrc = preview.getAttribute("data-original");
+		orignal.src = `./images/${orignalSrc}`;
+	});
+});
 
-let span = document.getElementsByClassName("close")[0];
-span.onclick = function() {
-    modal.style.display = "none";
-};
+modal.addEventListener('click',(e)=>{
+	if(e.target.classList.contains('modal')){
+		modal.classList.remove("open");
+		orignal.classList.remove("open");
+	}
+});
