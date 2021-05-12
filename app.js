@@ -18,6 +18,13 @@ var firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
+const reddit = {
+    username: process.env.redditUsername,
+    password: process.env.password,
+    redditAppId: process.env.redditAppId,
+    appSecret: process.env.appSecret,
+    userAgent: 'trendGetter/0.0.1'
+  }
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname,'./')));
@@ -40,6 +47,7 @@ app.get("/signup", function(req,res){
     res.sendFile(path.join(__dirname,'./templates/signup.html'))
 });
 app.post("/signup", function(req, res){
+    let uid = req.body.username
     console.log("POST signup");
     if(req.body.password != req.body.cpassword){
         res.send("password and confirm password do not match")
@@ -51,7 +59,7 @@ app.post("/signup", function(req, res){
                 console.log(snapshot.val());
                 if(snapshot.val() == null){
                     var data = {name, username, email, password, cpassword} = req.body
-                    firebase.database().ref(req.body.username).set({name, username, email, password, cpassword});
+                    firebase.database().ref('users/'+req.body.username).set({name, username, email, password, cpassword});
                     res.sendFile(path.join(__dirname,'./templates/signin.html'))}
 
                 if(snapshot.val() != null){
@@ -63,7 +71,7 @@ app.post("/signup", function(req, res){
 
 app.post("/signin", function(req,res){
     console.log("POST signin");
-    firebase.database().ref(req.body.username).once('value')
+    firebase.database().ref('users/'+req.body.username).once('value')
         .then(function(snapshot){
             console.log(snapshot.val());
             if(snapshot.val()==null){
@@ -78,6 +86,13 @@ app.post("/signin", function(req,res){
         })
 });
 
-app.listen(3000,()=>{
-    console.log('server at http://localhost:3000');
+app.post("/reddit", function(req, res){
+    firebase.database().ref('reddit').once('value')
+    .then(function(snapshot){
+        res.json(snapshot)
+    })
+})
+
+app.listen(80,()=>{
+    console.log('server at http://localhost');
 });
