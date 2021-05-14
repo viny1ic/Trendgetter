@@ -78,11 +78,9 @@ form input {
     row-gap: 2rem;
     padding: 2rem 0;
 }
-
 .store-product {
-    border: 1px solid #eee;
-    border-radius: 3px;
     max-width: 250px;
+    padding-bottom: 100px;
 }
 
 .product-details {
@@ -94,6 +92,7 @@ form input {
 .product-details h2 {
     font-size: 1.2rem;
     font-weight: 500;
+    margin: 10px auto;
 }
 
 .product-details ul{

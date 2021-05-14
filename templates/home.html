@@ -74,7 +74,7 @@
             for(y in data[x]){
                 let card = `
                         <div class="store-product">
-                             <img src="${data[x][y].img}" width="100%" height="100%" alt="reddit photo" class="myImg" data-original="#">
+                             <img src="${data[x][y].img}" width="100%" height="100%" alt="reddit photo" class="myImg" data-original="${data[x][y].img}">
                              <div class="product-details">
                                 <h2>${data[x][y].title}</h2>
                                 <a href="#">Favourite</a>
