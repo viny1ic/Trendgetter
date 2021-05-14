@@ -57,55 +57,6 @@
                     <section class="container" id="store-products">
 
 
-                        <div class="store-product jewelry">
-                            <img src="/assets/images/11.png" alt="" class="myImg" data-original="11.png">
-                            <div class="product-details">
-                                <h2>Jewelry Product</h2>
-                                 <p> <span>$39.99</span> $29.99</p>
-                                <a href="#">Favourite</a>
-                            </div>
-                        </div>
-
-                        <div class="store-product watch">
-                            <img src="/assets/images/13.png" alt="" class ="myImg" data-original="13.png">
-                            <div class="product-details">
-                                <h2>Watch Product</h2>
-                                <p> <span>$39.99</span> $29.99</p>
-                                <a href="#">Favourite</a>
-                            </div>
-                        </div>
-                        <div class="store-product shirt">
-                            <img src="/assets/images/4.png" alt="" class ="myImg" data-original="4.png">
-                            <div class="product-details">
-                                <h2>Shirt Product</h2>
-                                <p> <span>$39.99</span> $29.99</p>
-                                <a href="#">Favourite</a>
-                            </div>
-                        </div>
-                        <div class="store-product shirt">
-                            <img src="/assets/images/5.png" alt="" class ="myImg" data-original="5.png">
-                            <div class="product-details">
-                                <h2>Shirt Product</h2>
-                                <p> <span>$39.99</span> $29.99</p>
-                                <a href="#">Favourite</a>
-                            </div>
-                        </div>
-                        <div class="store-product gown">
-                            <img src="/assets/images/6.png" alt="" class ="myImg" data-original="6.png">
-                            <div class="product-details">
-                                <h2>Gown Product</h2>
-                                <p> <span>$39.99</span> $29.99</p>
-                                <a href="#">Favourite</a>
-                            </div>
-                        </div>
-                        <div class="store-product shirt">
-                            <img src="/assets/images/7.png" alt="" class ="myImg" data-original="7.png">
-                            <div class="product-details">
-                                <h2>Shirt Product</h2>
-                                <p> <span>$39.99</span> $29.99</p>
-                                <a href="#">Favourite</a>
-                            </div>
-                        </div>
 
                     </section>
                 </div>
@@ -118,6 +69,52 @@
         </div>
     </div>
 </div>
+<script>
+    fetch('people.json')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            appendData(data);
+        })
+        .catch(function (err) {
+            console.log('error: ' + err);
+        });
+
+
+
+
+    function appendData(data) {
+        //var mainContainer = document.getElementById("myData");
+        // for (var i = 0; i < data.length; i++) {
+        //     // var div = document.createElement("div");
+        //     // div.innerHTML = 'Name: ' + data[i].firstName + ' ' + data[i].lastName;
+        //     // mainContainer.appendChild(div);
+        // }
+        let arr = [data];
+
+        for(x in arr){
+            for(y in arr[x]){
+                for(z in arr[x][y]){
+                    // document.write(arr[x][y][z].img + "<br>");
+
+                    document.getElementById("store-products").innerHTML = `
+                        <div class="store-product">
+                             <img src="${arr[x][y][z].img}" alt="reddit photo" class="myImg" data-original="#">
+                             <div class="product-details">
+                                <h2>${arr[x][y][z].title}</h2>
+                                <a href="#">Favourite</a>
+                             </div>
+                        </div>
+                    `
+                }
+            }
+        }
+
+
+
+    }
+</script>
 <script type="text/javascript" src="/js/modal.js"></script>
 <script type="text/javascript" src="/js/script.js"></script>
 <script type="text/javascript" src="/js/home.js"></script>
