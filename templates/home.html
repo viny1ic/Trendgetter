@@ -70,16 +70,13 @@
     </div>
 </div>
 <script>
-    fetch('people.json')
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            appendData(data);
-        })
-        .catch(function (err) {
-            console.log('error: ' + err);
-        });
+    fetch('http://localhost/reddit')
+  .then(response => response.text())
+  .then(result => {var data = JSON.parse(result)
+    appendData(data)        
+
+})
+  .catch(error => console.log('error', error))
 
 
 
@@ -91,23 +88,23 @@
         //     // div.innerHTML = 'Name: ' + data[i].firstName + ' ' + data[i].lastName;
         //     // mainContainer.appendChild(div);
         // }
-        let arr = [data];
-
-        for(x in arr){
-            for(y in arr[x]){
-                for(z in arr[x][y]){
+        // let arr = [data];
+        console.log(data)
+        for(x in data){
+            for(y in data[x]){
                     // document.write(arr[x][y][z].img + "<br>");
 
                     document.getElementById("store-products").innerHTML = `
                         <div class="store-product">
-                             <img src="${arr[x][y][z].img}" alt="reddit photo" class="myImg" data-original="#">
+                             <img src="${data[x][y].img}" alt="reddit photo" class="myImg" data-original="#">
                              <div class="product-details">
-                                <h2>${arr[x][y][z].title}</h2>
+                                <h2>${data[x][y].title}</h2>
                                 <a href="#">Favourite</a>
                              </div>
                         </div>
                     `
-                }
+                    console.log(data[x][y].img)
+                    console.log(data[x][y].title)
             }
         }
 

@@ -96,7 +96,7 @@ app.post("/signin", function(req,res){
         })
 });
 
-app.post("/reddit", function(req, res){
+app.get("/reddit", function(req, res){
     firebase.database().ref('reddit').once('value')
     .then(function(snapshot){
         res.json(snapshot)

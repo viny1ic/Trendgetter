@@ -30,7 +30,6 @@ function setData(url){
     if (err) { return console.log(err); }
     var data = body.data.children
     to_set[data[0].data.subreddit] = getData(data)
-    console.log(to_set)
     firebase.database().ref('reddit/').set(to_set);
     });
 }
