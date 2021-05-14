@@ -34,6 +34,12 @@ app.get('/', function(req,res){
     res.sendFile(path.join(__dirname, './templates/signin.html'));
 });
 
+app.get('/signout', function(req,res){
+    console.log('GET signout');
+    res.sendFile(path.join(__dirname, './templates/signin.html'));
+});
+
+
 app.get("/signin", function(req,res){
     console.log("GET signin");
     res.sendFile(path.join(__dirname,'./templates/signin.html'))
